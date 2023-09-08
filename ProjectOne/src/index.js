@@ -14,7 +14,7 @@ app.get('/api', (req, res) => {
   const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
 
   const now = new Date();
-  const utcTime = now.toISOString().slice(0, -1) + 'Z';
+  const utcTime = now.toISOString();
 
   const fileGithubUrl = 'https://github.com/AnimBadger/Zuri/ProjectOne/src/index.js';
   const sourceCodeGithubUrl = 'https://github.com/AnimBadger/Zuri';
