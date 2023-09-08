@@ -13,12 +13,8 @@ app.get('/api', (req, res) => {
 
   const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
 
-  const utcTime = new Date().toUTCString();
-  const utcOffsetHours = new Date().getTimezoneOffset() / 60;
-
-  if (Math.abs(utcOffsetHours) > 2) {
-    return res.status(400).json({ error: 'UTC time is not within +/-2 hours' });
-  }
+  const now = new Date();
+  const utcTime = now.toISOString().slice(0, -1) + 'Z';
 
   const fileGithubUrl = 'https://github.com/AnimBadger/Zuri/ProjectOne/src/index.js';
   const sourceCodeGithubUrl = 'https://github.com/AnimBadger/Zuri';
@@ -26,10 +22,10 @@ app.get('/api', (req, res) => {
   const response = {
     slack_name: slackName,
     current_day: currentDay,
-    current_utc_time: utcTime,
+    utc_time: utcTime,
     track: track,
-    file_github_url: fileGithubUrl,
-    source_code_github_url: sourceCodeGithubUrl,
+    github_file_url: fileGithubUrl,
+    github_repo_url: sourceCodeGithubUrl,
     status_code: 200
   };
   res.json(response);
