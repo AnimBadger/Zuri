@@ -38,5 +38,5 @@ API testing software eg. ``Postman`` or ``Insomnia`` or ``Thunder Bolt``
 ``Delete Person``
 ![Delete Person](./src/images/delete_person.png)  
 
-## UML Diagram
+## UML Diagram  
 ``Class Diagram can be found ``[Here](https://share.ue.internxt.com/sh/file/60c3b038f0e50a0eab38/69053cc3fc010c77e802d172813a809cecd3b83729ef0ff0eb212a541a5c9f43)
