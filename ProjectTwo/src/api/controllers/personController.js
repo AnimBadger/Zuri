@@ -40,7 +40,6 @@ const updatePerson = asyncHandler(async (req, res) => {
 });
 
 const deletePerson = asyncHandler(async (req, res) => {
-  console.log(req.params.id);
   const person = await Person.findByIdAndDelete(req.params.id);
   if (!person) {
     res.status(404);
