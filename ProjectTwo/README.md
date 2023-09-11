@@ -15,7 +15,7 @@ API testing software eg. ``Postman`` or ``Insomnia`` or ``Thunder Bolt``
     $ npm install
 ```
 ## Run
-```shell
+```shell  
     $ npm start
 ```
 ## Endpoints
@@ -24,7 +24,7 @@ API testing software eg. ``Postman`` or ``Insomnia`` or ``Thunder Bolt``
 ``PUT`` <localhost:5000/api/person/:id>  
 ``DELETE`` <localhost:5000/api/person/:id>  
 
-``person`` model takes a body ``name`` only from body.  
+``person`` model takes ``name`` only from body.  
 ## Example
 ``Create person``  
 ![Create Person](./src/images/post_request.png)  
@@ -36,4 +36,7 @@ API testing software eg. ``Postman`` or ``Insomnia`` or ``Thunder Bolt``
 ![Update Person](./src/images/update_person.png)  
 
 ``Delete Person``
-![Delete Person](./src/images/delete_person.png)
+![Delete Person](./src/images/delete_person.png)  
+
+## UML Diagram
+``Class Diagram can be found ``[Here](https://share.ue.internxt.com/sh/file/60c3b038f0e50a0eab38/69053cc3fc010c77e802d172813a809cecd3b83729ef0ff0eb212a541a5c9f43)
