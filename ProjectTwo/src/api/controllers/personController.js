@@ -1,10 +1,10 @@
 const asyncHandler = require('express-async-handler');
 const Person = require('../models/personModel');
 
-const getPersons = asyncHandler(async (req, res) => {
-  const persons = await Person.find();
-  res.status(200).json(persons);
-});
+// const getPersons = asyncHandler(async (req, res) => {
+//   const persons = await Person.find();
+//   res.status(200).json(persons);
+// });
 
 const getPerson = asyncHandler(async (req, res) => {
   const person = await Person.findById(req.params.id);
@@ -48,4 +48,4 @@ const deletePerson = asyncHandler(async (req, res) => {
   res.status(204).json({});
 });
 
-module.exports = { getPersons, createPerson, updatePerson, deletePerson, getPerson };
+module.exports = { createPerson, updatePerson, deletePerson, getPerson };

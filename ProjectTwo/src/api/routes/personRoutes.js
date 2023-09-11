@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { getPersons, createPerson, updatePerson, deletePerson, getPerson } = require('../controllers/personController');
+const { createPerson, updatePerson, deletePerson, getPerson } = require('../controllers/personController');
 
-router.route('/').get(getPersons)
-;
 router.route('/:id').get(getPerson)
 ;
 router.route('/').post(createPerson)
