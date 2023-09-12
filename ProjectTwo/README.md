@@ -19,23 +19,27 @@ API testing software eg. ``Postman`` or ``Insomnia`` or ``Thunder Bolt``
     $ npm start
 ```
 ## Endpoints
-``POST`` <localhost:5000/api/person/>  
-``GET`` <localhost:5000/api/person/:id>   
-``PUT`` <localhost:5000/api/person/:id>  
-``DELETE`` <localhost:5000/api/person/:id>  
+``POST`` <localhost:5000/api>  
+``GET`` <localhost:5000/api/:personId>   
+``PUT`` <localhost:5000/api/:personId>  
+``DELETE`` <localhost:5000/api/:personId>  
 
 ``person`` model takes ``name`` only from body.  
 ## Example
 ``Create person``  
-![Create Person](./src/images/post_request.png)  
 
-``Get Person``
+![Create Person](./src/images/create_person.png)  
+
+``Get Person``  
+
 ![Get Person](./src/images/get_person.png)  
 
-``Update Person``
+``Update Person``  
+
 ![Update Person](./src/images/update_person.png)  
 
-``Delete Person``
+``Delete Person``  
+
 ![Delete Person](./src/images/delete_person.png)  
 
 ## UML Diagram  
