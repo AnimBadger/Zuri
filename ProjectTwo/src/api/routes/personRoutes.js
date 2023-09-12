@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const { createPerson, updatePerson, deletePerson, getPerson } = require('../controllers/personController');
+const { createPerson, patchPerson, deletePerson, getPerson } = require('../controllers/personController');
 
 router.route('/:id').get(getPerson)
 ;
 router.route('/').post(createPerson)
 ;
-router.route('/:id').put(updatePerson)
+router.route('/:id').patch(patchPerson)
 ;
 router.route('/:id').delete(deletePerson)
 ;

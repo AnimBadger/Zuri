@@ -25,18 +25,34 @@ const createPerson = asyncHandler(async (req, res) => {
   res.status(201).json({ person });
 });
 
-const updatePerson = asyncHandler(async (req, res) => {
-  const person = await Person.findById(req.params.id);
-  if (!person) {
-    res.status(404);
-    throw new Error('Person not found');
+// const updatePerson = asyncHandler(async (req, res) => {
+//   const person = await Person.findById(req.params.id);
+//   if (!person) {
+//     res.status(404);
+//     throw new Error('Person not found');
+//   }
+//   const updatedPerson = await Person.findByIdAndUpdate(
+//     req.params.id,
+//     req.body,
+//     { new: true }
+//   );
+//   res.status(200).json(updatedPerson);
+// });
+
+const patchPerson = asyncHandler(async (req, res) => {
+  try {
+    const person = await Person.findById(req.params.id);
+
+    if (!person) {
+      res.status(404);
+      throw new Error('Person not found');
+    }
+    person.name = req.body.name;
+    const updatedPerson = await person.save();
+    res.status(200).json(updatedPerson);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
-  const updatedPerson = await Person.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    { new: true }
-  );
-  res.status(200).json(updatedPerson);
 });
 
 const deletePerson = asyncHandler(async (req, res) => {
@@ -48,4 +64,4 @@ const deletePerson = asyncHandler(async (req, res) => {
   res.status(204).json({});
 });
 
-module.exports = { createPerson, updatePerson, deletePerson, getPerson };
+module.exports = { createPerson, patchPerson, deletePerson, getPerson };
