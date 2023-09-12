@@ -21,7 +21,7 @@ API testing software eg. ``Postman`` or ``Insomnia`` or ``Thunder Bolt``
 ## Endpoints
 ``POST`` <localhost:5000/api>  
 ``GET`` <localhost:5000/api/:personId>   
-``PUT`` <localhost:5000/api/:personId>  
+``PATCH`` <localhost:5000/api/:personId>  
 ``DELETE`` <localhost:5000/api/:personId>  
 
 ``person`` model takes ``name`` only from body.  
@@ -36,7 +36,7 @@ API testing software eg. ``Postman`` or ``Insomnia`` or ``Thunder Bolt``
 
 ``Update Person``  
 
-![Update Person](./src/images/update_person.png)  
+![Patch Person](./src/images/patch_person.png)  
 
 ``Delete Person``  
 
